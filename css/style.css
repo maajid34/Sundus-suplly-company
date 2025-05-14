@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FF3E41;
+    /* --primary: #FF3E41; */
+    --primary: #ffc107;
     --secondary: #51CFED;
     --light: #F8F2F0;
     --dark: #060315;
@@ -420,7 +421,9 @@
 /*** Footer ***/
 .footer {
     background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/map.png) center center no-repeat;
-    background-size: cover;
+   
+    background-size: cover; 
+  
 }
 
 .footer .btn.btn-social {
@@ -474,3 +477,107 @@
 .footer .copyright a {
     color: var(--light);
 }
+
+/* my css cards */
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+  }
+  
+  /* Background animation layer */
+
+  .card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #ffc107;
+    z-index: 0;
+    transition: height 0.4s ease;
+  }
+  
+  /* Animate background and elevate card */
+  .card:hover::before {
+    height: 100%;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Ensure text stays above animated background and turns white */
+  .card .card-body,
+  .card .card-img-top {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card:hover .card-title,
+  .card:hover .card-text,
+  .card:hover p,
+  .card:hover strong {
+    color: white;
+  }
+/* staff cards */
+.card-staff {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    color: #212529; /* Bootstrap default text */
+  }
+  
+  /* Blue overlay animation from bottom to top */
+  .card-staff::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgba(0, 123, 255, 0.2); /* Semi-transparent blue */
+    z-index: 0;
+    animation: fillUp 1.5s forwards;
+  }
+  
+  /* Ensure content is above the animated background */
+  .card-staff .card-body,
+  .card-staff .card-img-top {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Keep default text colors */
+  .card-staff .card-title,
+  .card-staff .card-text,
+  .card-staff p,
+  .card-staff strong {
+    color: inherit;
+  }
+  
+  /* Keyframes for bottom-to-top animation */
+  /* @keyframes fillUp {
+    to {
+      height: 100%;
+    }
+  } */
+
+  /* logo */
+  .logo-img {
+  max-height: 50px;
+  height: auto;
+  width: auto;
+}
+
+
+  /* nav */
+
+  .navbar{
+  
+   
+  }
+  .header {
+    background-color:  #ffc107;
+  }
